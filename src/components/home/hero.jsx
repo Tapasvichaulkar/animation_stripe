@@ -1,15 +1,18 @@
-"use client";
+'use client';
+
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 
+import { useRouter } from "next/navigation";
+
+import { motion, AnimatePresence } from "framer-motion";
 
 const Hero = () => {
   const [hovered, setHovered] = useState(false);
+  const router = useRouter();
 
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
-     
       {/* Background Video with Half Diagonal Cut */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0 [clip-path:polygon(0_0,100%_0,100%_40%,0_75%)]"
@@ -20,21 +23,31 @@ const Hero = () => {
       />
 
       {/* Navbar */}
-      <nav className="absolute top-0 left-0 right-0 flex justify-between items-center px-10 py-6 text-white z-20">
-        <div className="text-2xl font-bold ml-47">stripe</div>
-        <ul className="hidden md:flex gap-8 font-semibold">
-          <li className="hover:text-gray-300 cursor-pointer">Products</li>
-          <li className="hover:text-gray-300 cursor-pointer">Solutions</li>
-          <li className="hover:text-gray-300 cursor-pointer">Developers</li>
-          <li className="hover:text-gray-300 cursor-pointer">Resources</li>
-          <li className="hover:text-gray-300 cursor-pointer">Pricing</li>
-        </ul>
-        <div className="flex items-center gap-4">
-          <button className="hover:underline">Sign in</button>
-          <button className="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition">
-            Contact sales
-          </button>
+      <nav className="px-10 py-4 flex items-center justify-between  z-50 relative">
+        {/* Logo */}
+        <div className="text-white text-2xl font-bold cursor-pointer mx-40" onClick={() => router.push('/')}>
+          stripe
         </div>
+
+        {/* Menu */}
+        <ul className="hidden md:flex gap-6 font-semibold text-white text-lg items-center mx-30">
+          
+         
+          <li className="cursor-pointer hover:text-gray-200" onClick={() => router.push('/dashboard')}>
+           About
+          </li>
+          <button className="hover:text-gray-200 cursor-pointer flex items-center gap-1" onClick={() => router.push('/login')}>
+            Sign in 
+          </button>
+          <button
+            onClick={() => router.push('/contact')}
+            className="bg-white text-red-600 cursor-pointer px-4 py-2 rounded-full hover:bg-gray-100 transition flex items-center gap-1"
+          >
+            Contact sales 
+          </button>
+        </ul>
+
+        
       </nav>
 
       {/* Hero Content */}
@@ -50,9 +63,10 @@ const Hero = () => {
             to grow your revenue
           </h1>
           <p className="mt-4 text-lg text-gray-700 max-w-md">
-          Join the millions of companies that use Stripe to accept payments online and in person, embed financial services, power custom revenue models, and build a more profitable business.          </p>
+            Join the millions of companies that use Stripe to accept payments online and in person, embed financial services, power custom revenue models, and build a more profitable business.
+          </p>
 
-          {/* 👇 Animated Button */}
+          {/* Animated Button */}
           <button
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -85,9 +99,8 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Wrapper Container for positioning */}
+        {/* Image Section */}
         <div className="w-full h-[600px] flex items-center justify-center space-x-10">
-          {/* Mobile Image */}
           <div className="w-[320px] h-[500px] rounded-3xl overflow-hidden shadow-xl bg-white">
             <Image
               src="/mobile.png"
@@ -97,7 +110,6 @@ const Hero = () => {
               className="object-cover rounded-2xl shadow-xl"
             />
           </div>
-          {/* Dashboard Image */}
           <div className="w-[320px] h-[500px] rounded-3xl overflow-hidden shadow-xl bg-white">
             <Image
               src="/dashboard.png"
@@ -108,11 +120,6 @@ const Hero = () => {
             />
           </div>
         </div>
-
-
-
-
-        
       </div>
     </div>
   );

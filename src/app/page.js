@@ -7,8 +7,10 @@ import Footer from '@/components/home/footer'
 import Hero from '@/components/home/hero'
 import Gallery from '@/components/home/logo'
 import StickyLayout from '@/components/home/modularsolution'
+
 import StripeInfoCards from '@/components/home/stripinfo'
 import React from 'react'
+
 
 export default function page() {
   return (
