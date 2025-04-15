@@ -30,10 +30,8 @@ const Hero = () => {
         </div>
 
         {/* Menu */}
-        <ul className="hidden md:flex gap-6 font-semibold text-white text-lg items-center mx-30">
-          
-         
-          <li className="cursor-pointer hover:text-gray-200" onClick={() => router.push('/dashboard')}>
+        <ul className="hidden md:flex gap-6 font-semibold text-white text-lg items-center mx-30">         
+          <li className="cursor-pointer hover:text-gray-200" onClick={() => router.push('/about')}>
            About
           </li>
           <button className="hover:text-gray-200 cursor-pointer flex items-center gap-1" onClick={() => router.push('/login')}>
@@ -46,8 +44,6 @@ const Hero = () => {
             Contact sales 
           </button>
         </ul>
-
-        
       </nav>
 
       {/* Hero Content */}

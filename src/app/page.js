@@ -1,5 +1,6 @@
 
 import BmwSliderSection from '@/components/home/bmwsidersection'
+import BuiltForGrowth from '@/components/home/builtforgrowth'
 import HeroWithCode from '@/components/home/designedfordevloper'
 import GlowingEarth from '@/components/home/earthanimation'
 import EnterpriseTextBlock from '@/components/home/enterpriserenovation'
@@ -24,6 +25,7 @@ export default function page() {
       <BmwSliderSection />
       <HeroWithCode />
       <StripeInfoCards />
+      <BuiltForGrowth/>
       <Footer />
     </div>
   )
