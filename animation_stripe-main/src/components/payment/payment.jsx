@@ -1,39 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { FaCreditCard, FaPaypal } from "react-icons/fa";
 import { SiRazorpay, SiStripe } from "react-icons/si";
 
 export default function PaymentBox() {
-  const [amount, setAmount] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
-  const [message, setMessage] = useState("");
-
-  // Dummy GPay redirect
   const handleGPayClick = () => {
+    // Replace with your GPay redirect link
     window.location.href = "https://pay.google.com";
-  };
-
-  // Handle form submission
-  const handlePayment = async (e) => {
-    e.preventDefault();
-    if (!amount || !cardNumber) return alert("Enter amount and card/UPI number");
-
-    try {
-      const res = await fetch("/api/payment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount, cardNumber }),
-      });
-
-      const data = await res.json();
-      setMessage(data.message);
-      setAmount("");
-      setCardNumber("");
-    } catch (err) {
-      console.log(err);
-      setMessage("Payment failed. Try again!");
-    }
   };
 
   return (
@@ -49,6 +22,7 @@ export default function PaymentBox() {
 
       {/* Main content */}
       <div className="relative z-10 max-w-lg mx-auto p-6 bg-white rounded-xl shadow-xl mt-20">
+        {/* Main Title */}
         <h1 className="text-4xl font-bold text-gray-900 text-center mb-4">
           Quick & Secure Payments
         </h1>
@@ -56,49 +30,20 @@ export default function PaymentBox() {
           Unlock Instant Access for Only $19.99
         </p>
 
-        {/* Payment Form */}
-        <form onSubmit={handlePayment} className="flex flex-col gap-4">
-          <input
-            type="number"
-            placeholder="Enter Amount"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Card / UPI Number"
-            value={cardNumber}
-            onChange={(e) => setCardNumber(e.target.value)}
-            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            required
-          />
-          <button
-            type="submit"
-            className="bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-700 transition"
-          >
-            Pay Now
-          </button>
-        </form>
-
-        {/* Message */}
-        {message && (
-          <p className="mt-4 text-center text-green-600 font-medium">{message}</p>
-        )}
-
-        {/* GPay Button */}
+        {/* Pay with Google Pay Button */}
         <button
           onClick={handleGPayClick}
           className="w-full bg-orange-400 text-white font-bold py-3 mt-6 rounded-xl shadow-lg hover:bg-orange-500 transform transition-all hover:scale-105"
         >
           Pay with Google Pay
         </button>
+
+        {/* GPay Caption */}
         <p className="text-center text-sm text-gray-700 mt-2">
           Fast, Secure, and Easy Transactions
         </p>
 
-        {/* Trusted Payment Methods */}
+        {/* Payment Methods Section */}
         <div className="mt-6 bg-white rounded-xl p-5 shadow-md">
           <div className="text-center text-lg font-bold text-gray-700 mb-4">
             Trusted Payment Methods

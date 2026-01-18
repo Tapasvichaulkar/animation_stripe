@@ -55,32 +55,31 @@ const GlowingEarth = () => {
     <div className="w-full min-h-screen bg-black flex flex-row items-center justify-center text-white relative z-10">
       {/* Left side text */}
       <div className="w-2/5 p-6 ml-30">
-      <p className="text-blue-400 text-lg font-bold mb-10">Global Scale</p>
+        <p className="text-blue-400 text-lg font-bold mb-10">Global Exploration</p>
 
-        <h1 className="text-4xl font-bold mb-4">The backbone for global commerce</h1>
+        <h1 className="text-4xl font-bold mb-4">Virtual travel across the entire planet</h1>
         <p className="text-lg leading-relaxed">
-        Stripe makes moving money as easy and programmable as moving data. Our teams are based in offices around the world and we process hundreds of billions of dollars each year for ambitious businesses of all sizes.
+          GlobalTrek brings the world to your fingertips with immersive 360° experiences. Our platform features destinations from every corner of the globe, allowing you to explore breathtaking locations and cultural wonders from anywhere.
         </p>
         <div className="text-white p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-20 mt-20">
       
-      {/* Box 1 */}
-      <div className="border-l-2 border-cyan-400 pl-4 max-w-xs">
-        <h2 className="text-2xl font-bold mb-2">500M+</h2>
-        <p className="text-gray-300">
-          API requests per day, peaking at 13,000 requests a second.
-        </p>
-      </div>
+          {/* Box 1 */}
+          <div className="border-l-2 border-cyan-400 pl-4 max-w-xs">
+            <h2 className="text-2xl font-bold mb-2">10,000+</h2>
+            <p className="text-gray-300">
+              360° panoramic destinations across 195 countries worldwide.
+            </p>
+          </div>
 
-      {/* Box 2 */}
-      <div className="border-l-2 border-cyan-400 pl-4 max-w-xs">
-        <h2 className="text-2xl font-bold mb-2">99.999%</h2>
-        <p className="text-gray-300">
-          historical uptime for <span className="text-cyan-400">Stripe services.</span>
-        </p>
+          {/* Box 2 */}
+          <div className="border-l-2 border-cyan-400 pl-4 max-w-xs">
+            <h2 className="text-2xl font-bold mb-2">4K Ultra HD</h2>
+            <p className="text-gray-300">
+              immersive viewing quality for <span className="text-cyan-400">all premium content.</span>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-      </div>
-
 
       {/* Right side 3D Earth */}
       <div className="w-3/5 aspect-square max-h-[120vh]">

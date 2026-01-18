@@ -53,7 +53,7 @@ export default function Register() {
       } else {
         const form = e.target;
         form.reset();
-        router.push("/login");
+        router.push("/login");  
       }
     } catch (err) {
       console.error("Error during registration:", err);
